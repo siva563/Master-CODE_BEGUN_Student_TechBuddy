@@ -1,0 +1,88 @@
+# General
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Java / Maven / Gradle
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.project
+*.classpath
+*.settings/
+*.factorypath
+.target/
+bin/
+out/
+
+# Maven specific
+.mvn/
+!**/src/main/resources/
+!**/src/main/resources/**/*
+target/
+dependency-reduced-pom.xml
+release.properties
+
+# Gradle specific
+.gradle/
+build/
+.gradle-cache/
+
+# Spring Boot specific
+**/application.properties
+**/application.yml
+**/application-*.properties
+**/application-*.yml
+logs/
+*.log
+tmp/
+spring.log
+nohup.out
+
+# IDE Configurations
+.idea/
+*.iml
+*.swp
+*.bak
+*.tmp
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node.js / React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build files for React
+build/
+dist/
+.env
+.env.*local
+
+# Testing
+coverage/
+jest-html-reporters-*.json
+jest-sonar-reporter-*.xml
+.nyc_output/
+
+# Miscellaneous
+.env
+*.env
+*.key
+*.pem
+*.cert
+
+# Debugger logs
+debug.log
+*.pid
+*.seed
+*.pid.lock

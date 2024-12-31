@@ -1,0 +1,1038 @@
+{
+	"info": {
+		"_postman_id": "d76b66e0-39f6-4d0e-a5a5-557c44edba85",
+		"name": "LEARNING MANAGEMENT SYSTEM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19508727"
+	},
+	"item": [
+		{
+			"name": "User Module",
+			"item": [
+				{
+					"name": "ADMIN LOGIN",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailId\": \"demo.admin2@demo.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Login",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailId\": \"sachin@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"Customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mentor Login",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailId\": \"aditya@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"Mentor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Register",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Sachin\",\r\n  \"lastName\": \"Thakur\",\r\n  \"emailId\": \"sachin@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"phoneNo\": \"1234567890\",\r\n  \"role\": \"Customer\",\r\n  \"street\": \"Demo Street\",\r\n  \"city\": \"Demo City\",\r\n  \"pincode\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mentor Register",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Aditya\",\r\n  \"lastName\": \"Traveller\",\r\n  \"emailId\": \"aditya@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"phoneNo\": \"1234568975\",\r\n  \"role\": \"Mentor\",\r\n  \"street\": \"Demo Street\",\r\n  \"city\": \"Demo City\",\r\n  \"pincode\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADMIN REGISTER",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailId\": \"demo.admin2@demo.com\",\r\n  \"password\": \"123456\",\r\n  \"role\":\"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FETCH USER ROLE WISE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"strictSSL": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/fetch/role-wise?role=Mentor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"fetch",
+								"role-wise"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "Mentor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FETCH USER BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"strictSSL": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/fetch/user-id?userId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"fetch",
+								"user-id"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tour Guide Delete",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/tourGuide/delete?guideId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"tourGuide",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "guideId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Mentor Detail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "age",
+									"value": "27",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "Completed Graduation in 2020, Have a 3 years of Industrial experience in IT. Professional Backend Developer.",
+									"type": "text"
+								},
+								{
+									"key": "highestQualification",
+									"value": "B. Tech",
+									"type": "text"
+								},
+								{
+									"key": "profession",
+									"value": "Software Developer",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "mentorId",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "profilePic",
+									"type": "file",
+									"src": "/C:/Users/Admin/Downloads/image-removebg-preview (7).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/mentor/detail/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"mentor",
+								"detail",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course Module",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mentorId",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Spring Boot - Complete Course Beginner to Advance",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "In this course, we will see what is Spring Framework and what is Spring Boot! Later on we will also create 5 Production Level Projects.",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Free",
+									"type": "text"
+								},
+								{
+									"key": "fee",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "notesFileName",
+									"type": "file",
+									"src": "/C:/Users/Admin/Downloads/BBPS LETTER (1).pdf"
+								},
+								{
+									"key": "discountInPercent",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "authorCourseNote",
+									"value": "I will be your trainer in this course. I will help you to understand the topics and concepts in easy manner. I have huge experience of offline and online training.",
+									"type": "text"
+								},
+								{
+									"key": "specialNote",
+									"value": "The Amount paid is not refundable.",
+									"type": "text"
+								},
+								{
+									"key": "prerequisite",
+									"value": "Laptop with Good Internet Connection~Good Command on Core Java Oops Concepts",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Admin/Downloads/Sell Online Job Portal Thumbnail.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Course Section Topic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sectionId",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "srNo",
+									"value": "3.1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "What is Rest APIs and how to create it in Spring Boot?",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "In this video, we will see what is Spring Boot and why to use Spring Boot in deep!!!",
+									"type": "text"
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/M:/courseVideos/08ee147c2d204b3d87a9300bd2b1a9a2.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/section/topic/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"section",
+								"topic",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Course By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/fetch/course-id?courseId=1&videoShow=Yes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"fetch",
+								"course-id"
+							],
+							"query": [
+								{
+									"key": "courseId",
+									"value": "1"
+								},
+								{
+									"key": "videoShow",
+									"value": "Yes"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Course By Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/fetch/status-wise?status=Active&videoShow=No",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"fetch",
+								"status-wise"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Active"
+								},
+								{
+									"key": "videoShow",
+									"value": "No"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Course By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/fetch/category-wise?categoryId=1&videoShow=No",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"fetch",
+								"category-wise"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								},
+								{
+									"key": "videoShow",
+									"value": "No"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Course By Mentor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/fetch/mentor-wise?mentorId=4&status=Active&videoShow=No",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"fetch",
+								"mentor-wise"
+							],
+							"query": [
+								{
+									"key": "mentorId",
+									"value": "4"
+								},
+								{
+									"key": "status",
+									"value": "Active"
+								},
+								{
+									"key": "videoShow",
+									"value": "No"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Course By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/fetch/name-wise?courseName=Java",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"fetch",
+								"name-wise"
+							],
+							"query": [
+								{
+									"key": "courseName",
+									"value": "Java"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Course Section",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": 2,\r\n    \"srNo\": \"3\",\r\n    \"name\": \"What is Rest APIs & How to create Rest APIs in Spring Boot?\",\r\n    \"description\":\"In this section we will see how to create the Rest APIs using Spring Boot?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/section/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"section",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mentor Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/mentor/dashboard?mentorId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"mentor",
+								"dashboard"
+							],
+							"query": [
+								{
+									"key": "mentorId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category Module",
+			"item": [
+				{
+					"name": "ADD CATEGORY",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Software Development\",\r\n  \"description\": \"This category will contain programming language course\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/category/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FETCH ALL CATEGORY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"strictSSL": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/category/fetch/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"category",
+								"fetch",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CATEGORY",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/category/delete?categoryId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"category",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CATEGORY",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Software Development\",\r\n  \"description\": \"This category will contain programming language related course\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/category/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course Booking Module",
+			"item": [
+				{
+					"name": "Book Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseId\": 1,\r\n  \"customerId\": 3,\r\n  \"cardNo\": \"123456789012\",\r\n  \"nameOnCard\": \"Murad Ali Chaudhary\",\r\n  \"cvv\": \"123\",\r\n  \"expiryDate\": \"12/30\",\r\n  \"amount\":1699.15\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/course/booking/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"booking",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Purchased Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/booking/fetch/customer-wise?customerId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"booking",
+								"fetch",
+								"customer-wise"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mentor Purchased Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/booking/fetch/mentor-wise?mentorId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"booking",
+								"fetch",
+								"mentor-wise"
+							],
+							"query": [
+								{
+									"key": "mentorId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course wise Purchases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/booking/fetch/course-wise?courseId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"booking",
+								"fetch",
+								"course-wise"
+							],
+							"query": [
+								{
+									"key": "courseId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin All Purchases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/course/booking/fetch/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"course",
+								"booking",
+								"fetch",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
