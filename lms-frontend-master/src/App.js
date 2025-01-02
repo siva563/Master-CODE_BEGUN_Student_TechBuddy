@@ -30,6 +30,7 @@ import CreateOneCompilerUser from "./Components/CreateOneCompilerUser";
 import StartChallenge from "./Components/StartChallenge";
 import ChallengePage from "./Components/ChallengePage";
 import Dashboard from "./Components/Dashboard";
+import DashboardContent from "./Components/DashboardContent";
 
 function App() {
   return (
@@ -110,14 +111,12 @@ function App() {
         {/* Top-level routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginScreen />} />
-        {/* <Route path="/terms" element={<Terms />} /> */}
 
         {/* Dashboard Layout with Nested Routes */}
         <Route path="/dashboard/*" element={<Dashboard />}>
+          <Route index element={<DashboardContent />} />
           <Route path="batches" element={<BatchManager />} />
-          {/* <Route path="students" element={<Students />} />
-          <Route path="fees" element={<Fees />} />
-          <Route path="assignments" element={<Assignments />} /> */}
+          {/* Add more nested routes here */}
         </Route>
       </Routes>
 
