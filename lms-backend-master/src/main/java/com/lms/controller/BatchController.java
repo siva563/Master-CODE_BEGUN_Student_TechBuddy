@@ -10,33 +10,52 @@ import com.lms.entity.Batch;
 import com.lms.service.BatchService;
 
 @RestController
-@RequestMapping("/api/batch")
+@RequestMapping("/api/batches")
 public class BatchController {
 
 	@Autowired
 	private BatchService batchService;
 
-	@PostMapping("/create")
+	@PostMapping("/createBatch")
 	public ResponseEntity<Batch> createBatch(@RequestBody Batch batch) {
+		// Validate batch type
+		if (!batch.getBatchType().equalsIgnoreCase("Online") &&
+				!batch.getBatchType().equalsIgnoreCase("Offline")) {
+			throw new IllegalArgumentException("Invalid batch type! Must be 'Online' or 'Offline'.");
+		}
+
 		Batch createdBatch = batchService.createBatch(batch);
 		return ResponseEntity.ok(createdBatch);
 	}
 
-	@GetMapping("/all")
-	public ResponseEntity<List<Batch>> getAllBatches() {
-		List<Batch> batches = batchService.getAllBatches();
-		return ResponseEntity.ok(batches);
+	@PutMapping("/{id}")
+	public ResponseEntity<Batch> updateBatch(@PathVariable Long id, @RequestBody Batch batch) {
+		// Validate batch type
+		if (!batch.getBatchType().equalsIgnoreCase("Online") &&
+				!batch.getBatchType().equalsIgnoreCase("Offline")) {
+			throw new IllegalArgumentException("Invalid batch type! Must be 'Online' or 'Offline'.");
+		}
+
+		Batch updatedBatch = batchService.updateBatch(id, batch);
+		return ResponseEntity.ok(updatedBatch);
 	}
 
-	@PutMapping("/update/{id}")
-	public ResponseEntity<Batch> updateBatch(@PathVariable Long id, @RequestBody Batch updatedBatch) {
-		Batch batch = batchService.updateBatch(id, updatedBatch);
+	@DeleteMapping("/{id}")
+	public ResponseEntity<String> deleteBatch(@PathVariable Long id) {
+		batchService.deleteBatch(id);
+		return ResponseEntity.ok("Batch deleted successfully!");
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Batch> getBatch(@PathVariable Long id) {
+		Batch batch = batchService.getBatchById(id)
+				.orElseThrow(() -> new IllegalArgumentException("Batch not found!"));
 		return ResponseEntity.ok(batch);
 	}
 
-	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteBatch(@PathVariable Long id) {
-		batchService.deleteBatch(id);
-		return ResponseEntity.ok("Batch deleted successfully.");
+	@GetMapping("/getAllBatches")
+	public ResponseEntity<List<Batch>> getAllBatches() {
+		List<Batch> batches = batchService.getAllBatches();
+		return ResponseEntity.ok(batches);
 	}
 }

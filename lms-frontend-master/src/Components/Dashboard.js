@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Bottom from "./Bottom";
-import Topbar from "./Topbar";
-//import Leftmenu from "./Leftmenu";
+
 import Menu from "./Menu";
+import Topbar from "./Topbar";
 
+const Dashboard = () => {
+    const [isMenuCollapsed, setIsMenuCollapsed] = useState(false);
 
-const Dashboard = ({ }) => {
+    const toggleMenu = () => {
+        setIsMenuCollapsed(!isMenuCollapsed);
+    };
+
     return (
-        <div className="dashboard">
-            {/* Sidebar */}
-            <Menu />
+        <div className="dashboard-layout">
+            {/* Navbar */}
+            <Topbar />
 
-            {/* Main Content */}
-            <div className="main-content">
-                <Topbar />
-                <div className="content-area">
-                    <Outlet />
+            {/* Sidebar and Content Area */}
+            <div className="d-flex">
+                <Menu isCollapsed={isMenuCollapsed} toggleMenu={toggleMenu} />
+                <div
+                    className="content-container flex-grow-1"
+                    style={{
+                        marginLeft: isMenuCollapsed ? "80px" : "250px",
+                        transition: "margin-left 0.3s ease",
+                    }}
+                >
+                    <div className="p-4">
+                        <Outlet />
+                    </div>
                 </div>
-                <Bottom />
             </div>
         </div>
     );

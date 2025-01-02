@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.java.Log;
 
 @Component
 public class RequestHeaderInterceptor implements HandlerInterceptor {
@@ -19,14 +20,33 @@ public class RequestHeaderInterceptor implements HandlerInterceptor {
 	// If you return 'true', the request will continue processing; 'false' will stop
 	// the request
 
+	// public boolean preHandle(HttpServletRequest request, HttpServletResponse
+	// response, Object handler)
+	// throws Exception {
+
+	// LOG.info("preHandle() method invoked");
+
+	// LOG.info("---------------- Request Start ---------------");
+	// LOG.info("Request URL: " + request.getRequestURI());
+	// LOG.info("Method Type: " + request.getMethod());
+
+	// return true;
+	// }
+
+	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
+		String methodType = request.getMethod();
+		String requestURL = request.getRequestURI();
+		LOG.info("Request URL: {}", requestURL);
+		LOG.info("Method Type: {}", methodType);
 
-		LOG.info("preHandle() method invoked");
-
-		LOG.info("---------------- Request Start ---------------");
-		LOG.info("Request URL: " + request.getRequestURI());
-		LOG.info("Method Type: " + request.getMethod());
+		// Ensure valid paths are allowed
+		if (!requestURL.startsWith("/api/")) {
+			LOG.error("Invalid Request Path: {}", requestURL);
+			response.sendError(HttpServletResponse.SC_NOT_FOUND, "Invalid Path");
+			return false;
+		}
 
 		return true;
 	}

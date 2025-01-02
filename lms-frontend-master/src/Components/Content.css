@@ -1,0 +1,12 @@
+.content-container {
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Account for navbar height */
+}
+
+.content-scrollable {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

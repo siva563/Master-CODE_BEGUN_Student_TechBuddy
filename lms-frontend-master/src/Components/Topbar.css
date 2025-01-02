@@ -1,0 +1,17 @@
+.navbar-logo {
+    height: 40px;
+    width: 40px;
+}
+
+.profile-icon {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
