@@ -167,8 +167,8 @@ public class UserResource {
 		user.setPassword(encodedPassword);
 
 		Address address = new Address();
-		address.setCity(request.getCity());
-		address.setPincode(request.getPincode());
+		//address.setCity(request.getCity());
+		//address.setPincode(request.getPincode());
 		address.setStreet(request.getStreet());
 
 		Address savedAddress = this.addressService.addAddress(address);

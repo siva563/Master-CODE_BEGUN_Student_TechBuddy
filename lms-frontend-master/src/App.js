@@ -31,6 +31,7 @@ import StartChallenge from "./Components/StartChallenge";
 import ChallengePage from "./Components/ChallengePage";
 import Dashboard from "./Components/Dashboard";
 import DashboardContent from "./Components/DashboardContent";
+import StudentManager from "./Components/StudentManager";
 
 function App() {
   return (
@@ -116,6 +117,7 @@ function App() {
         <Route path="/dashboard/*" element={<Dashboard />}>
           <Route index element={<DashboardContent />} />
           <Route path="batches" element={<BatchManager />} />
+          <Route path="students" element={<StudentManager />} />
           {/* Add more nested routes here */}
         </Route>
       </Routes>
