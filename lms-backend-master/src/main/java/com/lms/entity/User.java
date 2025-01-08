@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,8 +34,8 @@ public class User {
 
 	private String role;
 
-	@OneToOne
-	@JoinColumn(name = "address_id")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private Address address;
 
 	@OneToOne
@@ -42,7 +43,7 @@ public class User {
 	private MentorDetail mentorDetail;
 
 	private BigDecimal amount;
-	
+
 	private String status;
 
 }

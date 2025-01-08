@@ -20,13 +20,13 @@ const Dashboard = () => {
             <div className="d-flex">
                 <Menu isCollapsed={isMenuCollapsed} toggleMenu={toggleMenu} />
                 <div
-                    className="content-container flex-grow-1"
+                    className="content-container flex-grow-1 content-area"
                     style={{
                         marginLeft: isMenuCollapsed ? "80px" : "250px",
                         transition: "margin-left 0.3s ease",
                     }}
                 >
-                    <div className="p-4">
+                    <div className="p-4" style={{height:'800px', overflowY:'auto'}}>
                         <Outlet />
                     </div>
                 </div>
