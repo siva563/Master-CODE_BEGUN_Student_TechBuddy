@@ -3,6 +3,7 @@ package com.lms.utility;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class DateTimeUtils {
@@ -31,6 +32,13 @@ public class DateTimeUtils {
 	private static String formatLocalDateTime(LocalDateTime dateTime, String dateFormatPattern) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormatPattern);
 		return dateTime.format(formatter);
+	}
+	
+	public static LocalDateTime getTokenExpirationDate() {
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Kolkata")); // You can change the time zone here
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss.SSS z");
+        String formattedDateTime = now.format(formatter);
+        return now.toLocalDateTime();
 	}
 
 }

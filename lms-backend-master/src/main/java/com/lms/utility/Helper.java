@@ -1,5 +1,7 @@
 package com.lms.utility;
 
+import java.util.UUID;
+
 public class Helper {
 
 	public static String generateTourBookingId() {
@@ -35,5 +37,9 @@ public class Helper {
 
 		return sb.toString().toUpperCase();
 	}
+
+	public static String generateResetToken() {
+        return UUID.randomUUID().toString();
+    }
 
 }
