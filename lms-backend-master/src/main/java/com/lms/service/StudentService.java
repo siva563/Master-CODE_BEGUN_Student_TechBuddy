@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -15,16 +16,23 @@ import com.lms.dao.PasswordResetTokenDao;
 import com.lms.dao.StudentDao;
 import com.lms.dao.UserDao;
 import com.lms.dto.AddressDto;
+import com.lms.dto.CommonApiResponse;
 import com.lms.dto.EducationDto;
 import com.lms.dto.StudentDto;
 import com.lms.entity.Address;
 import com.lms.entity.PasswordResetToken;
 import com.lms.entity.Student;
 import com.lms.entity.User;
+import com.lms.exception.UserSaveFailedException;
 import com.lms.utility.DateTimeUtils;
 import com.lms.utility.Helper;
 import com.lms.utility.JwtUtils;
+import com.lms.utility.Constants.ActiveStatus;
+import com.lms.utility.Constants.UserRole;
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.MalformedJwtException;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -43,6 +51,9 @@ public class StudentService {
 	
 	@Autowired
 	private PasswordResetTokenDao pResetTokenRepository;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	public StudentService(StudentDao studentRepository) {
 		this.studentRepository = studentRepository;
@@ -61,8 +72,8 @@ public class StudentService {
 			System.out.println(new BigDecimal(student.getTotalFee())+" "+student.getTotalFee());
 			user.setAmount(new BigDecimal(student.getTotalFee()));
 			user.setPhoneNo(student.getMobileNumber());
-			user.setRole("Student");
-			user.setStatus("Active");
+			user.setRole(UserRole.ROLE_STUDENT.value());
+			user.setStatus(ActiveStatus.ACTIVE.value());
 			user.setMentorDetail(null);
 			user.setAddress(addressRepository.getById(Math.toIntExact(student.getAddress().getId())));
 
@@ -102,12 +113,26 @@ public class StudentService {
 		return null;
 	}
 
-	public User updateStudentPassword(String token, String password) {
-		JwtUtils jwtUtils = new JwtUtils();
-		String email = jwtUtils.extractUsername(token);
-		User user = userRepository.findByEmailId(email);
-		user.setPassword(password);
-		return userRepository.save(user);
+	public CommonApiResponse updateStudentPassword(String token, String password) {
+		try {
+			JwtUtils jwtUtils = new JwtUtils();
+			String email = jwtUtils.extractUsername(token);
+			User user = userRepository.findByEmailId(email);
+			user.setRole(UserRole.ROLE_STUDENT.value());
+			user.setStatus(ActiveStatus.ACTIVE.value());
+			user.setPassword(passwordEncoder.encode(password));
+			userRepository.save(user);
+			CommonApiResponse res = new CommonApiResponse();
+			res.setResponseMessage("Password Created Successfully!");
+			res.setSuccess(true);
+			return res;
+		} catch (ExpiredJwtException e) {
+			throw new UserSaveFailedException("Token expired.");
+		}catch (MalformedJwtException e) {
+			throw new UserSaveFailedException("Invalid Token.");
+		}catch (Exception e) {
+			throw new UserSaveFailedException("Failed to reset password.");
+		}
 	}
 
 	@Transactional

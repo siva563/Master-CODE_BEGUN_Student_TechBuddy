@@ -15,8 +15,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
@@ -259,15 +261,15 @@ public class UserResource {
 		if (user == null) {
 			response.setResponseMessage("User with this Email Id not registered in System!!!");
 			response.setSuccess(false);
-
 			return new ResponseEntity<UserLoginResponse>(response, HttpStatus.BAD_REQUEST);
 		}
 
 		List<GrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority(user.getRole()));
 
 		try {
-			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmailId(),
+			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmailId(),
 					loginRequest.getPassword(), authorities));
+            SecurityContextHolder.getContext().setAuthentication(authentication);
 		} catch (Exception ex) {
 			response.setResponseMessage("Invalid email or password.");
 			response.setSuccess(false);

@@ -53,7 +53,7 @@ public class UserController {
 		return this.userResource.addMentorDetail(request);
 	}
 
-	@PostMapping("login")
+	@PostMapping("/login")
 	@Operation(summary = "Api to login any User")
 	public ResponseEntity<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest) {
 		return userResource.login(userLoginRequest);
