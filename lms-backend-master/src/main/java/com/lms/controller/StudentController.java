@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lms.dto.CommonApiResponse;
 import com.lms.dto.StudentDto;
 import com.lms.entity.Student;
 import com.lms.entity.User;
@@ -39,7 +40,7 @@ public class StudentController {
         return ResponseEntity.ok(studentService.updateStudent(id,student));
     }
     @PutMapping("/reset")
-    public ResponseEntity<User> updateStudentPassword(@RequestParam String token,@RequestParam String password) {
+    public ResponseEntity<CommonApiResponse> updateStudentPassword(@RequestParam String token,@RequestParam String password) {
         return ResponseEntity.ok(studentService.updateStudentPassword(token, password));
     }
     
