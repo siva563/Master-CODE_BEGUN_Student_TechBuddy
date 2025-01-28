@@ -1,3 +1,4 @@
+
 package com.lms.dao;
 
 import java.util.List;
@@ -17,9 +18,13 @@ public interface UserDao extends JpaRepository<User, Integer> {
 	User findByRoleAndStatusIn(String role, List<String> status);
 
 	List<User> findByRole(String role);
-	
+
 	User findByEmailIdAndRoleAndStatus(String emailId, String role, String status);
-	
+
 	List<User> findByRoleAndStatus(String role, String status);
+
+	void deleteByEmailId(String emailId);
+
+	boolean existsByEmailId(String email);
 
 }
